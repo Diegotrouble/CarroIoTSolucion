@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCarro.Views.Conduccion"
+             Title="Conducción">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="FillAndExpand">
+
+            <Frame Padding="15" CornerRadius="10" BorderColor="LightGray" BackgroundColor="WhiteSmoke" Margin="0,0,0,15">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Estado MQTT:" FontSize="Medium" FontAttributes="Bold" TextColor="#333"/>
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                        <Label x:Name="ConnectionStatusLabel" 
+                               Text="Desconectado" 
+                               TextColor="Red" 
+                               FontSize="Small"
+                               VerticalOptions="Center"/>
+                        <ActivityIndicator x:Name="ConnectionActivityIndicator" 
+                                           IsRunning="False" 
+                                           Color="{StaticResource Primary}" 
+                                           HeightRequest="20" WidthRequest="20"
+                                           VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <Button x:Name="ConnectButton" 
+                                Text="Conectar" 
+                                Clicked="ConnectButton_Clicked" 
+                                CornerRadius="8"
+                                BackgroundColor="{StaticResource Primary}"
+                                TextColor="White"/>
+                        <Button x:Name="DisconnectButton" 
+                                Grid.Column="1"
+                                Text="Desconectar" 
+                                Clicked="DisconnectButton_Clicked" 
+                                IsEnabled="False" 
+                                CornerRadius="8"
+                                BackgroundColor="DarkGray"
+                                TextColor="White"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Controles del Vehículo"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   TextColor="#444"
+                   Margin="0,10,0,5"/>
+            <Grid RowSpacing="10" ColumnSpacing="10" HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="1"
+                        x:Name="BtnUp"
+                        Text="↑"
+                        FontSize="50"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        CornerRadius="45"
+                        BackgroundColor="#2196F3"
+                        Clicked="BtnAdelante_Clicked"
+                        TextColor="White"
+                        IsEnabled="False"/>
+                <Button Grid.Row="1" Grid.Column="0"
+                        x:Name="BtnLeft"
+                        Text="←"
+                        FontSize="50"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        CornerRadius="45"
+                        BackgroundColor="#2196F3"
+                        Clicked="BtnIzquierda_Clicked"
+                        TextColor="White"
+                        IsEnabled="False"/>
+
+                <Button Grid.Row="1" Grid.Column="2"
+                        x:Name="BtnRight"
+                        Text="→"
+                        FontSize="50"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        CornerRadius="45"
+                        BackgroundColor="#2196F3"
+                        Clicked="BtnDerecha_Clicked"
+                        TextColor="White"
+                        IsEnabled="False"/>
+
+                <Button Grid.Row="2" Grid.Column="1"
+                        x:Name="BtnDown"
+                        Text="↓"
+                        FontSize="50"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        CornerRadius="45"
+                        BackgroundColor="#2196F3"
+                        Clicked="BtnAtras_Clicked"
+                        TextColor="White"
+                        IsEnabled="False"/>
+            </Grid>
+            <Label Text="Utiliza los controles para mover el vehículo"
+                   FontSize="Small"
+                   HorizontalOptions="Center"
+                   TextColor="Gray"
+                   Margin="0,0,0,20"/>
+
+            <Frame Padding="15" CornerRadius="10" BorderColor="LightGray" BackgroundColor="WhiteSmoke" Margin="0,10,0,0">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Log de Mensajes MQTT:" FontSize="Medium" FontAttributes="Bold" TextColor="#333"/>
+                    <Editor x:Name="ReceivedMessagesEditor" 
+                            IsReadOnly="True" 
+                            HeightRequest="150" 
+                            AutoSize="TextChanges" 
+                            FontSize="Micro"
+                            BackgroundColor="LightYellow"
+                            TextColor="#222"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

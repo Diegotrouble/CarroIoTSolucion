@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCarro.Views.Data"
+             Title="Datos de Sensores">
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20">
+
+            <Label Text="Datos del Vehículo en Tiempo Real"
+                   FontSize="Title"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+
+            <Frame Padding="15" CornerRadius="10" BorderColor="LightGray" BackgroundColor="WhiteSmoke">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Temperatura" FontSize="Large" FontAttributes="Bold" TextColor="#333"/>
+                    <Label x:Name="TemperatureValueLabel" Text="-- °C" FontSize="Header" HorizontalOptions="Center" Margin="0,5,0,5"  TextColor="Black"/>
+                    <ProgressBar x:Name="TemperatureProgressBar" Progress="0" ProgressColor="{StaticResource Primary}"/>
+                    <Label x:Name="TemperatureRangeLabel" Text="Rango: 0°C - 100°C" FontSize="Micro" HorizontalOptions="End" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Padding="15" CornerRadius="10" BorderColor="LightGray" BackgroundColor="WhiteSmoke">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Intensidad de Señal (RSSI)" FontSize="Large" FontAttributes="Bold" TextColor="#333"/>
+                    <Label x:Name="RssiValueLabel" Text="-- dBm" FontSize="Header" HorizontalOptions="Center" Margin="0,5,0,5" TextColor="Black"/>
+                    <ProgressBar x:Name="RssiProgressBar" Progress="0" ProgressColor="ForestGreen"/>
+                    <Label x:Name="RssiRangeLabel" Text="Rango: -90dBm (malo) a -30dBm (excelente)" FontSize="Micro" HorizontalOptions="End" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Padding="15" CornerRadius="10" BorderColor="LightGray" BackgroundColor="WhiteSmoke">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Corriente" FontSize="Large" FontAttributes="Bold" TextColor="#333"/>
+                    <Label x:Name="CurrentValueLabel" Text="-- A" FontSize="Header" HorizontalOptions="Center" Margin="0,5,0,5"  TextColor="Black"/>
+                    <ProgressBar x:Name="CurrentProgressBar" Progress="0" ProgressColor="DodgerBlue"/>
+                    <Label x:Name="CurrentRangeLabel" Text="Rango: 0A - 10A" FontSize="Micro" HorizontalOptions="End" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label x:Name="LastUpdateLabel" Text="Última actualización: Nunca" FontSize="Small" HorizontalOptions="Center" TextColor="DarkGray" Margin="0,10,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

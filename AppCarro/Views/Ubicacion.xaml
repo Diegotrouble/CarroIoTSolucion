@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             x:Class="AppCarro.Views.Ubicacion"
+             Title="Ubicación del Vehículo">
+    <Grid RowDefinitions="Auto,Auto,*" ColumnDefinitions="*" Padding="10" RowSpacing="10">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="5">
+            <Label Text="Esperando IP pública del vehículo vía MQTT..."
+                   FontSize="Small"
+                   HorizontalOptions="Center" 
+                   TextColor="Gray"/>
+            <Label x:Name="IpAddressLabel"
+                   Text="IP Recibida: N/A"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"/>
+            <Label x:Name="CoordinatesLabel"
+                   Text="Coordenadas: N/A"
+                   FontSize="Small"
+                   HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+        <ActivityIndicator Grid.Row="1" x:Name="MapLoadingIndicator" IsRunning="False" HorizontalOptions="Center" Color="{StaticResource Primary}"/>
+
+        <maps:Map x:Name="VehicleLocationMap"
+                  Grid.Row="2"
+                  MapType="Street">
+        </maps:Map>
+
+    </Grid>
+</ContentPage>

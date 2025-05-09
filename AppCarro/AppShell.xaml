@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppCarro.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:AppCarro.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="AppCarro">
+
+    <TabBar>
+        <ShellContent
+            Title="Conducción"
+            ContentTemplate="{DataTemplate views:Conduccion}" 
+            Route="Conduccion"
+            Icon="taxi.png"/>
+
+        <ShellContent
+            Title="Data"
+            ContentTemplate="{DataTemplate views:Data}" 
+            Route="Data"
+            Icon="equalizer.png"/>
+
+        <ShellContent
+            Title="Ubicación"
+            ContentTemplate="{DataTemplate views:Ubicacion}" 
+            Route="Ubicacion"
+            Icon="location.png"/>
+
+
+    </TabBar>
+
+</Shell>
