@@ -26,6 +26,12 @@
             Route="Ubicacion"
             Icon="location.png"/>
 
+        <ShellContent
+            Title="Datos por sensor"
+            ContentTemplate="{DataTemplate views:Temperatura}" 
+            Route="DatosPorSensor"
+            Icon="thermometer.png"/>
+
 
     </TabBar>
 

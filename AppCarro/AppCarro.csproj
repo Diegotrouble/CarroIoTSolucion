@@ -75,6 +75,9 @@
 	  <MauiXaml Update="Views\Data.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Temperatura.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Ubicacion.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

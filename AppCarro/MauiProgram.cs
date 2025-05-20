@@ -37,6 +37,7 @@ namespace AppCarro
             // Cuando creemos GeolocationService, lo registraremos así:
             builder.Services.AddSingleton<GeolocationService>();
             builder.Services.AddTransient<Data>(); // O AddSingleton si es apropiado
+            builder.Services.AddTransient<Temperatura>(); // O AddSingleton si es apropiado
 
             return builder.Build();
         }

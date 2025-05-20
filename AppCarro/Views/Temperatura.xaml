@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCarro.Views.Temperatura"
+             Title="Ultima actualización">
+    <VerticalStackLayout  Spacing="15" Padding="20">
+        <Label 
+            Text="Pantalla de ultima actualización  "
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Frame Padding="15" CornerRadius="10" BorderColor="LightGray" BackgroundColor="WhiteSmoke">
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Ingrese el sensor a buscar" FontSize="Large" FontAttributes="Bold" TextColor="#333"/>
+                
+               
+                <Entry x:Name="SensorABuscar" Placeholder="Ingrese el sensor" Keyboard="Default" HorizontalOptions="FillAndExpand" Margin="0,10,0,0" TextColor="Black"/>
+                <Button Text="Obtener" Clicked="ObtenerSensor" BackgroundColor="{StaticResource Primary}" TextColor="White" HorizontalOptions="Center" Margin="0,10,0,0"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
+    
